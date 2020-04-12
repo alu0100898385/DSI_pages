@@ -2,7 +2,6 @@
 layout: post
 title:  "Handling events"
 ---
-
 # Handling events
 
 A continuación se presentan ejemplos prácticos sacados del 
@@ -451,7 +450,7 @@ function asTabs(evt, cityName) {
 
 # Jekyll and Github Pages
 A continuación se procede a explicar como realizar el informe de practicas con Jekyll y Github Pages.
-## Jekyll
+# Jekyll
 Primero se ha istalado jekyll en la máquina local, cabe destacar que hay que tener instalado **ruby** y **gem** por lo tanto nos aseguramos de que los tenemos intalados.
 ````
 ...$ ruby -v
@@ -471,9 +470,9 @@ Ya tendriamos todo instalado y listo para preparar nuestro repostorio y subirlo 
 ````
 ...$ jekyll new (name)
 ````
-En este caso se ejecutó **jekyll new handdling-events**. Dentro del proyecto nos crea el directorio *handdling-events* con contenido por defecto.
+En este caso se ejecutó **jekyll new dsi-pages**. Dentro del proyecto nos crea el directorio *handdling-events* con contenido por defecto.
 ````
-└── handling-events
+└── dsi-pages
     ├── 404.html
     ├── Gemfile
     ├── _config.yml
@@ -482,38 +481,36 @@ En este caso se ejecutó **jekyll new handdling-events**. Dentro del proyecto no
     ├── about.md
     └── index.md
 ```` 
-Para poder ver nuestra pagina web nos situamos en el directorio generado y ejecutamos el siguiente comando:
+**_config.yml**: Este archivo de configuración está destinado a configuraciones que afectan a todo su blog, valores que se espera que configure una vez y que rara vez edite después de eso. Aqui podemos modificar el titulo, descripción de la página, correo electrónico, usuario de github, etc..
+
+Para poder ver nuestra pagina web nos situamos en el directorio generado y ejecutamos el siguiente comando la primera vez que ejecutemos el servidor:
 ````
-Primera vez que ejecutemos el servidor:
 ...$ bundle exec jekyll serve
-configuration file: /Users/danyabreu/Desktop/Dany/dsi/p3-t2-handling-events-alu0100898385/handling-events/_config.yml
-            Source: /Users/danyabreu/Desktop/Dany/dsi/p3-t2-handling-events-alu0100898385/handling-events
-       Destination: /Users/danyabreu/Desktop/Dany/dsi/p3-t2-handling-events-alu0100898385/handling-events/_site
- Incremental build: disabled. Enable with --incremental
-      Generating... 
-       Jekyll Feed: Generating feed for posts
-                    done in 2.673 seconds.
- Auto-regeneration: enabled for '/Users/danyabreu/Desktop/Dany/dsi/p3-t2-handling-events-alu0100898385/handling-events'
-    Server address: http://127.0.0.1:4000/
-  Server running... press ctrl-c to stop.
-
-
-Después:
-...$ jekyll serve
-Configuration file: /Users/danyabreu/Desktop/Dany/dsi/p3-t2-handling-events-alu0100898385/handling-events/_config.yml
-            Source: /Users/danyabreu/Desktop/Dany/dsi/p3-t2-handling-events-alu0100898385/handling-events
-       Destination: /Users/danyabreu/Desktop/Dany/dsi/p3-t2-handling-events-alu0100898385/handling-events/_site
- Incremental build: disabled. Enable with --incremental
-      Generating... 
-       Jekyll Feed: Generating feed for posts
-                    done in 0.928 seconds.
- Auto-regeneration: enabled for '/Users/danyabreu/Desktop/Dany/dsi/p3-t2-handling-events-alu0100898385/handling-events'
-    Server address: http://127.0.0.1:4000/
-  Server running... press ctrl-c to stop.
 ````
-Vemos que nos ha creado una pagina web en la dirección http://127.0.0.1:4000/, en dicha dirección podemos ver la página que nos a creado por defecto. 
+Una vez hecho esto por primera vez solo para volver a arrancar el servidor solo hace falta ejecutar:
+````
+...$ jekyll serve
+````
+Al ejecutar los comandos mencionados anteriormente nos muestra que la dirección del servidor es http://127.0.0.1:4000/, en dicha dirección podemos ver la página que nos a creado por defecto. 
 
 ![captura](capturas/jekyll1.png?raw=true "jekyll1")
 - Página por defecto creada por Jekyll.
 
+Para poder añadir informes de prácticas como este solo debemos añadir este fichero en el directorio **_posts** y añadirle las siguientes líneas:
+````
+---
+layout: post
+title:  "Handling events"
+---
+````
+- **layout: post** es el estilo de la página.
 
+# GitHub Pages
+
+Con Github Pages podemos alojar directamente nuestro repositorio de GitHub. Simplemente subimos nuestro repositorio (*push*) y los cambios se verán online.
+- 1º Iniciamos sesión en [Github](https://github.com/).
+- 2º Creamos un nuevo repositorio y lo nombramos **"*(nombre de usuario)*.github.io"**.
+- 3º Subimos nuestro repositorio donde trabajamos con jekyll anteriormente.
+- 4º En GitHub dentro del repositorio vamos a *settings* y activamos GitHub Pages.
+
+Ya deberiamos tener nuestra pagina creada con Jekyll subida a **"*(nombre de usuario)*.github.io"**. En este caso puedes encontrar este informe en [esta página web](https://alu0100898385.github.io).
